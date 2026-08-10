@@ -1,3 +1,31 @@
+/* 1. Forzar que bordes y paddings se calculen DENTRO del ancho y no sumen espacio extra */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* 2. Evitar que el cuerpo de la página genere barra horizontal */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden; /* Corta cualquier desbordamiento accidental */
+}
+
+/* 3. Garantizar que ninguna imagen o elemento multimedia supere la pantalla */
+img, video, iframe, figure {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 4. Romper textos o URLs muy largas si no caben en los 375px */
+p, a, h1, h2, h3, li, figcaption {
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+/* 5. Asegurar que los campos del formulario ocupen como máximo el 100% de su contenedor */
+input, textarea, select, button {
+    max-width: 100%;
+    width: 100%;
+}
 /* --- Variables y Configuración Básica --- */
 :root {
     --bg-color: #f8f9fa;
