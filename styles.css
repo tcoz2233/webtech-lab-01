@@ -162,3 +162,18 @@ footer {
     padding: 1rem;
     font-size: 0.9rem;
 }
+
+/* Contenedor de la foto */
+figure {
+    max-width: 300px; /* Ancho máximo de la imagen en pantalla grande */
+    margin: 1.5rem auto; /* La centra horizontalmente */
+    text-align: center;
+}
+
+/* Comportamiento de la imagen dentro del contenedor */
+figure img {
+    width: 100%; /* Ocupa el 100% de los 300px del contenedor */
+    max-width: 100%; /* Nunca se sale si la pantalla mide menos de 300px (celular de 375px) */
+    height: auto; /* Mantiene la proporción de la foto sin deformarla */
+    border-radius: 8px; /* Bordes suaves opcionales */
+}
