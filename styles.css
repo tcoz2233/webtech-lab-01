@@ -6,7 +6,7 @@
 /* 2. Evitar que el cuerpo de la página genere barra horizontal */
 html, body {
     max-width: 100%;
-    overflow-x: hidden; /* Corta cualquier desbordamiento accidental */
+    overflow-x: hidden; 
 }
 
 /* 3. Garantizar que ninguna imagen o elemento multimedia supere la pantalla */
@@ -15,7 +15,7 @@ img, video, iframe, figure {
     height: auto;
 }
 
-/* 4. Romper textos o URLs muy largas si no caben en los 375px */
+/* 4. Romper textos o URLs muy largas*/
 p, a, h1, h2, h3, li, figcaption {
     overflow-wrap: break-word;
     word-break: break-word;
@@ -193,15 +193,15 @@ footer {
 
 /* Contenedor de la foto */
 figure {
-    max-width: 300px; /* Ancho máximo de la imagen en pantalla grande */
-    margin: 1.5rem auto; /* La centra horizontalmente */
+    max-width: 300px; 
+    margin: 1.5rem auto;
     text-align: center;
 }
 
 /* Comportamiento de la imagen dentro del contenedor */
 figure img {
-    width: 100%; /* Ocupa el 100% de los 300px del contenedor */
-    max-width: 100%; /* Nunca se sale si la pantalla mide menos de 300px (celular de 375px) */
-    height: auto; /* Mantiene la proporción de la foto sin deformarla */
-    border-radius: 8px; /* Bordes suaves opcionales */
+    width: 100%;
+    max-width: 100%; 
+    height: auto;
+    border-radius: 8px; 
 }
