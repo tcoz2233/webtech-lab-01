@@ -1,3 +1,6 @@
+html {
+    scroll-behavior: smooth;
+}
 /* 1. Forzar que bordes y paddings se calculen DENTRO del ancho y no sumen espacio extra */
 *, *::before, *::after {
     box-sizing: border-box;
@@ -204,4 +207,58 @@ figure img {
     max-width: 100%; 
     height: auto;
     border-radius: 8px; 
+}
+.hidden {
+    display: none !important;
+}
+
+.collection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.collection-card {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+.badge {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    font-size: 0.8rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-delete:hover {
+    background-color: #bd2130;
+}
+
+/* Mensajes de error en los inputs */
+.error-message {
+    color: #dc3545; /* Rojo de advertencia */
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: block;
+}
+
+/* Mensaje general de feedback al final del formulario */
+.feedback-message {
+    margin-top: 1rem;
+    font-weight: bold;
 }

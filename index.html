@@ -2,10 +2,10 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=service-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal website -- Teodoro Coz Cuevas</title>
-    <link real="stylesheet" href="styles.css">
-    <script src:"asd.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="asd.js" defer></script>
 </head>
 
 <body>
@@ -17,6 +17,8 @@
                 <li><a href="#about">About me</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Path</a></li>
+                <!-- NUEVO ENLACE -->
+                <li><a href="#collection-section">Collection</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -65,22 +67,74 @@
             </article>
         </section>
 
+        <section id="collection-section">
+            <h2>My interactive collection</h2>
+
+            <!-- Controles de Filtro -->
+            <div class="collection-controls">
+                <label for="search-input">Search:</label>
+                <input type="text" id="search-input" placeholder="Search by name or description...">
+
+                <label for="category-select">Category:</label>
+                <select id="category-select">
+                    <option value="all">All categories</option>
+                    <option value="Engineering">Engineering</option>
+                    <option value="Hobbies">Hobbies</option>
+                </select>
+                
+            </div>
+
+            <!-- Contenedor donde JS insertará las tarjetas -->
+            <div id="collection-container" class="collection-grid"></div>
+            
+            <!-- Mensaje cuando no hay resultados de búsqueda -->
+            <p id="no-results" class="hidden">No items matching the search were found.</p>
+
+            <!-- Formulario para agregar un nuevo ítem -->
+            <h3>Add new element</h3>
+            <form id="add-item-form">
+                <div class="form-group">
+                    <label for="new-title">Title:</label>
+                    <input type="text" id="new-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="new-category">New category:</label>
+                    <select id="new-category" required>
+                        <option value="Engineering">Engineering</option>
+                        <option value="Hobbies">Hobbies</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="new-desc">Description:</label>
+                    <input type="text" id="new-desc" required>
+                </div>
+                <button type="submit">Add to colection</button>
+            </form>
+        </section>
+
         <section id="contact">
             <h2>Contact</h2>
-            <form action="#" method="post">
+            <form id="contact-form" novalidate>
                 <div class="form-group">
-                    <label for="name">Teodoro Coz Cuevas</label>
-                    <input type="text" id="name" name="name" required autocomplete="name">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Your name" required autocomplete="name">
+                    <span class="error-message" id="name-error"></span>
                 </div>
+                
                 <div class="form-group">
-                    <label for="email">tcoz@miuandes.cl</label>
-                    <input type="email" id="email" name="email" required autocomplete="email">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" placeholder="name@domain.com" required autocomplete="email">
+                    <span class="error-message" id="email-error"></span>
                 </div>
+                
                 <div class="form-group">
-                    <label for="message">Message: </label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+                    <span class="error-message" id="message-error"></span>
                 </div>
+
                 <button type="submit">Send message</button>
+                <p id="form-feedback" class="feedback-message"></p>
             </form>
         </section>
     </main>
